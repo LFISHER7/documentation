@@ -1,0 +1,1166 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Measures - OpenSAFELY documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#defining-measures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="OpenSAFELY documentation" class="md-header-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OpenSAFELY documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Measures
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenSAFELY documentation" class="md-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OpenSAFELY documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      How OpenSAFELY works
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="How OpenSAFELY works" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        How OpenSAFELY works
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-methods/" class="md-nav__link">
+      Our philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coming-soon/" class="md-nav__link">
+      Not just another TRE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security-levels/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow/" class="md-nav__link">
+      Analysis workflow
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Data sources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Data sources" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Data sources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-systmone/" class="md-nav__link">
+      Primary care records
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-sgsscovid/" class="md-nav__link">
+      Covid-19 test results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-ecds/" class="md-nav__link">
+      Emergency attendances
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-apc/" class="md-nav__link">
+      Hospital admissions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-icnarc/" class="md-nav__link">
+      Intensive care admissions (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-cpns/" class="md-nav__link">
+      In-hospital deaths (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-onsdeaths/" class="md-nav__link">
+      Registered deaths
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-and-git/" class="md-nav__link">
+      GitHub and Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../opensafely-cli/" class="md-nav__link">
+      OpenSAFELY CLI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-macos/" class="md-nav__link">
+      macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" class="md-nav__link">
+      Project repositories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def/" class="md-nav__link">
+      Study definitions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-variables/" class="md-nav__link">
+      Study definition variable reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cohortextractor/" class="md-nav__link">
+      cohortextractor
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-flowcharts/" class="md-nav__link">
+      Inclusion/exclusion flow charts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Measures
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Measures
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defining-measures" class="md-nav__link">
+    Defining measures
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining measures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-a-study-definition" class="md-nav__link">
+    Define a study definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-the-data" class="md-nav__link">
+    Extract the data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculate-the-measures" class="md-nav__link">
+    Calculate the measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-in-a-pipeline" class="md-nav__link">
+    Putting it all together in a pipeline
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Codelists
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Codelists" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Codelists
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-intro/" class="md-nav__link">
+      Introduction to codelists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-creation/" class="md-nav__link">
+      Building a codelist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-project/" class="md-nav__link">
+      Adding codelists to Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-snomed/" class="md-nav__link">
+      SNOMED codelists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../pipelines/" class="md-nav__link">
+      Running and testing code
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../releasing-files/" class="md-nav__link">
+      Releasing files from the server
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Good Practice
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Good Practice" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon"></span>
+        Good Practice
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../good-practice-intro/" class="md-nav__link">
+      Good practice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-data-manifesto/" class="md-nav__link">
+      The Datalab Open Manifesto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protocol/" class="md-nav__link">
+      Developing a protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-workflow/" class="md-nav__link">
+      Using Git effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-reviews/" class="md-nav__link">
+      Code reviews
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Feature requests, bug reports
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Feature requests, bug reports" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon"></span>
+        Feature requests, bug reports
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-packages/" class="md-nav__link">
+      Adding packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-variables/" class="md-nav__link">
+      Adding Study Definition variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-documentation/" class="md-nav__link">
+      Updating the Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defining-measures" class="md-nav__link">
+    Defining measures
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining measures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-a-study-definition" class="md-nav__link">
+    Define a study definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-the-data" class="md-nav__link">
+    Extract the data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculate-the-measures" class="md-nav__link">
+    Calculate the measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-in-a-pipeline" class="md-nav__link">
+    Putting it all together in a pipeline
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Measures</h1>
+                
+                <p>The Measures framework allows you to extract multiple datasets covering different time periods, and calculates a set of <em>measures</em> for each period.</p>
+<p>Measures are expressed as a quotient (i.e., a numerator divided by a denominator) which in practice could be used to calculate proportions, ratios, means, counts, and so on.</p>
+<p>For example, we may wish to calculate, for each month in 2020 and each STP (administrative health regions in England), the proportion of patients who were admitted to hospital at least once and the proportion of patients who died.</p>
+<p>Without Measures, this would require creating a set of variables (or a <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr>) for each month of interest containing: the region; whether or not they were admitted to hospital; whether or not they died,
+and we would then need to use these datasets to calculate the desired proportion and aggregate the results.</p>
+<p>Measures makes this process simple.</p>
+<h2 id="defining-measures">Defining measures<a class="headerlink" href="#defining-measures" title="Permanent link">&#128279;</a></h2>
+<p>Generating measures is a three step process:</p>
+<ol>
+<li><strong>Define a <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr></strong> that includes a <code>measures</code> variable, which should be a list calls to the <code>Measure()</code> function.</li>
+<li><strong>Extract the data</strong> by running <code>generate_cohort</code> using the <code>--index-date-range</code> option to cover the range of time periods we want to calculate the measure for.</li>
+<li><strong>Calculate the measures</strong> by running <code>generate_measures</code> which takes the files extracted in step 2 and produces files like <code>measure_&lt;measure_id&gt;.csv</code>.</li>
+</ol>
+<h3 id="define-a-study-definition">Define a <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr><a class="headerlink" href="#define-a-study-definition" title="Permanent link">&#128279;</a></h3>
+<p>The <code>study_definition.py</code> script for the example above is:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">cohortextractor</span> <span class="kn">import</span> <span class="n">StudyDefinition</span><span class="p">,</span> <span class="n">Measure</span><span class="p">,</span> <span class="n">patients</span>
+
+<span class="n">study</span> <span class="o">=</span> <span class="n">StudyDefinition</span><span class="p">(</span>
+    <span class="c1"># Configure the expectations framework</span>
+    <span class="n">default_expectations</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;earliest&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;latest&quot;</span><span class="p">:</span> <span class="s2">&quot;today&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;exponential_increase&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;incidence&quot;</span> <span class="p">:</span> <span class="mf">0.2</span>
+    <span class="p">},</span>
+
+    <span class="n">index_date</span> <span class="o">=</span> <span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span>
+
+    <span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">registered_as_of</span><span class="p">(</span><span class="s2">&quot;index_date&quot;</span><span class="p">),</span>
+
+    <span class="n">stp</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">registered_practice_as_of</span><span class="p">(</span>
+        <span class="s2">&quot;index_date&quot;</span><span class="p">,</span>
+        <span class="n">returning</span><span class="o">=</span><span class="s2">&quot;stp_code&quot;</span><span class="p">,</span>
+        <span class="n">return_expectations</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ratios&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;stp1&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;stp2&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;stp3&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}},</span> <span class="s2">&quot;incidence&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="p">),</span>
+
+    <span class="n">sex</span><span class="o">=</span><span class="n">patients</span><span class="o">.</span><span class="n">sex</span><span class="p">(</span>
+    <span class="n">return_expectations</span><span class="o">=</span><span class="p">{</span>
+      <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;universal&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ratios&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="mf">0.49</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="mf">0.51</span><span class="p">}},</span>
+    <span class="p">}</span>
+  <span class="p">),</span>
+
+    <span class="n">admitted</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">admitted_to_hospital</span><span class="p">(</span>
+        <span class="n">returning</span> <span class="o">=</span> <span class="s2">&quot;binary_flag&quot;</span><span class="p">,</span>
+        <span class="n">between</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;index_date&quot;</span><span class="p">,</span> <span class="s2">&quot;last_day_of_month(index_date)&quot;</span><span class="p">],</span>
+        <span class="n">return_expectations</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;incidence&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+    <span class="p">),</span>
+
+    <span class="n">died</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">died_from_any_cause</span><span class="p">(</span>
+      <span class="n">between</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;index_date&quot;</span><span class="p">,</span> <span class="s2">&quot;last_day_of_month(index_date)&quot;</span><span class="p">],</span>
+      <span class="n">returning</span> <span class="o">=</span> <span class="s2">&quot;binary_flag&quot;</span><span class="p">,</span>
+      <span class="n">return_expectations</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;incidence&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+    <span class="p">),</span>
+
+<span class="p">)</span>
+
+<span class="n">measures</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Measure</span><span class="p">(</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;hosp_admission_by_stp&quot;</span><span class="p">,</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="s2">&quot;admitted&quot;</span><span class="p">,</span>
+        <span class="n">denominator</span> <span class="o">=</span> <span class="s2">&quot;population&quot;</span><span class="p">,</span>
+        <span class="n">group_by</span> <span class="o">=</span> <span class="s2">&quot;stp&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">Measure</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;death_by_stp&quot;</span><span class="p">,</span>
+        <span class="n">numerator</span><span class="o">=</span><span class="s2">&quot;died&quot;</span><span class="p">,</span>
+        <span class="n">denominator</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+        <span class="n">group_by</span><span class="o">=</span><span class="s2">&quot;stp&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
+This differs from a normal <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> due to the addition of the <code>measures</code> object, which is a list of calls to the <code>Measure()</code> function, for each measure.</p>
+<ul>
+<li><code>id</code> is just a string used to identify the measure output file.</li>
+<li><code>numerator</code> and <code>denominator</code> are the columns in the dataset that define the measure. They must be numeric or boolean (encoded as 0 or 1).</li>
+<li><code>group_by</code> column can be of any type.</li>
+</ul>
+<p>You can calculate measures for more than one group at a time by specifying multiple variables as follows: </p>
+<div class="highlight"><pre><span></span><code><span class="n">measures</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Measure</span><span class="p">(</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;hosp_admission_by_stp&quot;</span><span class="p">,</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="s2">&quot;admitted&quot;</span><span class="p">,</span>
+        <span class="n">denominator</span> <span class="o">=</span> <span class="s2">&quot;population&quot;</span><span class="p">,</span>
+        <span class="n">group_by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;stp&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">],</span>
+    <span class="p">),</span>
+    <span class="n">Measure</span><span class="p">(</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;death_by_stp&quot;</span><span class="p">,</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="s2">&quot;died&quot;</span><span class="p">,</span>
+        <span class="n">denominator</span> <span class="o">=</span><span class="s2">&quot; population&quot;</span><span class="p">,</span>
+        <span class="n">group_by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;stp&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">],</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
+<h2 id="extract-the-data">Extract the data<a class="headerlink" href="#extract-the-data" title="Permanent link">&#128279;</a></h2>
+<p>To run multiple study definitions over a series of dates, use the <code>--index-date-range</code> option of the <code>generate_cohort</code> command.
+Rather than generating a single output CSV file this generates multiple output files across a range of dates, modifying the study's index date each time.</p>
+<p>The range is specified as:</p>
+<div class="highlight"><pre><span></span><code>--index-date-range &quot;YYYY-MM-DD to YYYY-MM-DD by (week|month)&quot;
+</code></pre></div>
+<p>It also excepts <code>today</code> in place of a date.</p>
+<p>Output files are named like: <code>output/input_YYYY-MM-DD.csv</code></p>
+<p>There is also a <code>--skip-existing</code> option which will cause the cohortextractor to skip the extraction step for any dates where the corresponding file already exists.
+This makes it easier to incrementally extract data for new months/weeks without having to re-extract everything.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>cohortextractor generate_cohort --index-date-range &quot;2020-01-01 to 2020-12-01 by month&quot;
+</code></pre></div>
+<p>...which will output:</p>
+<div class="highlight"><pre><span></span><code>output/input_2020-01-01.csv
+output/input_2020-02-01.csv
+...
+output/input_2020-12-01.csv
+</code></pre></div>
+<h2 id="calculate-the-measures">Calculate the measures<a class="headerlink" href="#calculate-the-measures" title="Permanent link">&#128279;</a></h2>
+<p>This is done using the <code>generate_measures</code> command:</p>
+<div class="highlight"><pre><span></span><code>cohortextractor generate_measures
+</code></pre></div>
+<p>For each defined measure, and for each file extracted in step 2, this generates an output file with the measure calculated for that month or week.</p>
+<div class="highlight"><pre><span></span><code>output/measure_hosp_admission_by_stp_2020-01-01.csv
+output/measure_death_by_stp_2020-01-01.csv
+output/measure_hosp_admission_by_stp_2020-02-01.csv
+output/measure_death_by_stp_2020-02-01.csv
+...
+output/measure_hosp_admission_by_stp_2020-12-01.csv
+output/measure_death_by_stp_2020-12-01.csv
+</code></pre></div>
+<p>Finally, for each measure, it combines all the output into a single file with an additional <code>date</code> column indicating the date associated with each row.</p>
+<div class="highlight"><pre><span></span><code>output/measure_hosp_admission_by_stp.csv
+output/measure_death_by_stp.csv
+</code></pre></div>
+<p>This command also respects the <code>--skip-existing</code> flag.
+This will prevent it from recalculating the measure for any months or weeks which have already been calculated.
+However the final step, which combines output across time periods, will always be run.</p>
+<h2 id="putting-it-all-together-in-a-pipeline">Putting it all together in a pipeline<a class="headerlink" href="#putting-it-all-together-in-a-pipeline" title="Permanent link">&#128279;</a></h2>
+<p>To generate the final outputs <code>measure_hosp_admission_by_stp.csv</code> and <code>measure_death_by_stp.csv</code> in a <abbr title="defines how different scripts within the project’s analytic code should be run: in what order, with which versions of which software, etc; defined in a file named `project.yaml`">project pipeline</abbr>, you would use the following actions:</p>
+<div class="highlight"><pre><span></span><code>  <span class="nt">generate_study_population</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cohortextractor:latest generate_cohort --study-definition study_definition --index-date-range &quot;2020-01-01 to 2020-12-01 by month&quot; --skip-existing --output-dir=output/measures</span>
+    <span class="nt">outputs</span><span class="p">:</span>
+      <span class="nt">highly_sensitive</span><span class="p">:</span>
+        <span class="nt">cohort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/measures/input_*.csv</span>
+
+  <span class="nt">generate_measures</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cohortextractor:latest generate_measures --study-definition study_definition --skip-existing --output-dir=output/measures</span>
+    <span class="nt">needs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">generate_study_population</span><span class="p p-Indicator">]</span>
+    <span class="nt">outputs</span><span class="p">:</span>
+      <span class="nt">moderately_sensitive</span><span class="p">:</span>
+        <span class="nt">measure_csv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/measures/measure_*.csv</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../study-def-flowcharts/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Inclusion/exclusion flow charts
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../codelist-intro/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Introduction to codelists
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

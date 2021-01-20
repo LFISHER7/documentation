@@ -1,0 +1,1155 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Releasing files from the server - OpenSAFELY documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#releasing-output-files-from-analysis-runs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="OpenSAFELY documentation" class="md-header-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OpenSAFELY documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Releasing files from the server
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenSAFELY documentation" class="md-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OpenSAFELY documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      How OpenSAFELY works
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="How OpenSAFELY works" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        How OpenSAFELY works
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-methods/" class="md-nav__link">
+      Our philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coming-soon/" class="md-nav__link">
+      Not just another TRE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security-levels/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow/" class="md-nav__link">
+      Analysis workflow
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Data sources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Data sources" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Data sources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-systmone/" class="md-nav__link">
+      Primary care records
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-sgsscovid/" class="md-nav__link">
+      Covid-19 test results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-ecds/" class="md-nav__link">
+      Emergency attendances
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-apc/" class="md-nav__link">
+      Hospital admissions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-icnarc/" class="md-nav__link">
+      Intensive care admissions (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-cpns/" class="md-nav__link">
+      In-hospital deaths (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-onsdeaths/" class="md-nav__link">
+      Registered deaths
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-and-git/" class="md-nav__link">
+      GitHub and Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../opensafely-cli/" class="md-nav__link">
+      OpenSAFELY CLI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-macos/" class="md-nav__link">
+      macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" class="md-nav__link">
+      Project repositories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def/" class="md-nav__link">
+      Study definitions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-variables/" class="md-nav__link">
+      Study definition variable reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cohortextractor/" class="md-nav__link">
+      cohortextractor
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-flowcharts/" class="md-nav__link">
+      Inclusion/exclusion flow charts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../measures/" class="md-nav__link">
+      Measures
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Codelists
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Codelists" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Codelists
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-intro/" class="md-nav__link">
+      Introduction to codelists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-creation/" class="md-nav__link">
+      Building a codelist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-project/" class="md-nav__link">
+      Adding codelists to Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-snomed/" class="md-nav__link">
+      SNOMED codelists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../pipelines/" class="md-nav__link">
+      Running and testing code
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Releasing files from the server
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Releasing files from the server
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#releasing-output-files-from-analysis-runs" class="md-nav__link">
+    Releasing output files from analysis runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing output files from analysis runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disclosivity-checks-and-redaction" class="md-nav__link">
+    Disclosivity checks and redaction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redaction-data-breaches-and-how-to-recover-from-them" class="md-nav__link">
+    Redaction data breaches and how to recover from them
+  </a>
+  
+    <nav class="md-nav" aria-label="Redaction data breaches and how to recover from them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-issues" class="md-nav__link">
+    The issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-do-if-you-find-a-data-breach" class="md-nav__link">
+    What to do if you find a data breach
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Good Practice
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Good Practice" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon"></span>
+        Good Practice
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../good-practice-intro/" class="md-nav__link">
+      Good practice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-data-manifesto/" class="md-nav__link">
+      The Datalab Open Manifesto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protocol/" class="md-nav__link">
+      Developing a protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-workflow/" class="md-nav__link">
+      Using Git effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-reviews/" class="md-nav__link">
+      Code reviews
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Feature requests, bug reports
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Feature requests, bug reports" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon"></span>
+        Feature requests, bug reports
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-packages/" class="md-nav__link">
+      Adding packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-variables/" class="md-nav__link">
+      Adding Study Definition variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-documentation/" class="md-nav__link">
+      Updating the Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#releasing-output-files-from-analysis-runs" class="md-nav__link">
+    Releasing output files from analysis runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing output files from analysis runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disclosivity-checks-and-redaction" class="md-nav__link">
+    Disclosivity checks and redaction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redaction-data-breaches-and-how-to-recover-from-them" class="md-nav__link">
+    Redaction data breaches and how to recover from them
+  </a>
+  
+    <nav class="md-nav" aria-label="Redaction data breaches and how to recover from them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-issues" class="md-nav__link">
+    The issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-do-if-you-find-a-data-breach" class="md-nav__link">
+    What to do if you find a data breach
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Releasing files from the server</h1>
+                
+                <p>All outputs from OpenSAFELY pipelines are subject to <a href="../security-levels/">tiered levels of scrutiny</a>, to provide assurance that identifiable data is not leaked accidentally, or maliciously.</p>
+<p>The final tier is review of so-called "<abbr title="tables, figures, and other structured files produced as a result of the analysis of Level 3 data, for example summary statistics and statistical models. OpenSAFELY users with the appropriate permission can view this data, and publish it to the internet if they consider it safe to do so">Level 4</abbr>" outputs, where the OpenSAFELY framework stores outputs labelled as <code>moderately_sensitive</code> in the <code>project.yaml</code> file.</p>
+<p><abbr title="tables, figures, and other structured files produced as a result of the analysis of Level 3 data, for example summary statistics and statistical models. OpenSAFELY users with the appropriate permission can view this data, and publish it to the internet if they consider it safe to do so">Level 4</abbr> outputs can only be released by authorised users who have permission to log in to the secure server.
+Such users have responsibility for redacting sensitive information or choosing not to publish it at all. 
+The study author should do everything they can to make this easy; for example, carrying out low number suppression automatically, documenting code clearly, and only selecting essential items for publication when deciding what to label as <code>moderately_sensitive</code>.</p>
+<h2 id="releasing-output-files-from-analysis-runs">Releasing output files from analysis runs<a class="headerlink" href="#releasing-output-files-from-analysis-runs" title="Permanent link">&#128279;</a></h2>
+<p>The output and log files that are created by <a href="../pipelines/#running-your-code-on-the-server">running code against the live database</a> will <a href="../pipelines/#accessing-the-outputs">appear in the secure environment</a> in a workspace-specific folder.</p>
+<p>The reviewer releases outputs back to the original repo using git. 
+To make this process easier and to reduce the likelihood of sensitive information being accidentally released, there is a script-based procedure to follow. In essence, the process is: create a git repo in the folder where the outputs were created; check and redact them as necessary; commit the safe files to the repo; run the <code>osrelease</code> command and follow the instructions. This last step will create a new branch containing the released outputs which can then be merged onto another branch in the repo via a pull request.</p>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&#128279;</a></h3>
+<ul>
+<li>Log into L4 server</li>
+<li>In a git-bash terminal, run <code>/d/bin/install-osrelease.bat</code> (or <code>/e/bin/install-osrelease.bat</code> on the L3 server). You can run this command multiple times without any problems if needed.  </li>
+<li>Close the git-bash terminal and reopen it</li>
+<li>Check you can run <code>osrelease --help</code> (you'll get some help text)</li>
+</ul>
+<h3 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&#128279;</a></h3>
+<p>The following instructions assume you have submitted one or more jobs which have created outputs on the <abbr title="tables, figures, and other structured files produced as a result of the analysis of Level 3 data, for example summary statistics and statistical models. OpenSAFELY users with the appropriate permission can view this data, and publish it to the internet if they consider it safe to do so">Level 4</abbr> server, including log files from failed runs.</p>
+<ol>
+<li>
+<p>Log in to the <abbr title="tables, figures, and other structured files produced as a result of the analysis of Level 3 data, for example summary statistics and statistical models. OpenSAFELY users with the appropriate permission can view this data, and publish it to the internet if they consider it safe to do so">Level 4</abbr> server &mdash; if you have access you will have been provided instructions on how to do this.</p>
+</li>
+<li>
+<p>Go to <code>/d/Level4Files/workspaces/&lt;NAME_OF_YOUR_WORKSPACE&gt;</code> (or <code>/e/FILESFORL4/workspaces/&lt;NAME_OF_YOUR_WORKSPACE&gt;</code> if you are in <abbr title="intermediate data, required for running a study, which may contain identifiable information, and which should never be considered for publication; usually a CSV produced from a study definition. Most OpenSAFELY users will not have (or need) permission to see this data directly">Level 3</abbr>, <em>which you shouldn't be</em>). You should see:</p>
+<ul>
+<li>a <code>metadata/</code> folder containing logs for each action,</li>
+<li>an <code>outputs/</code> folder (by convention but this could be something else) containing the <code>moderately_sensitive</code> files intended for release. </li>
+</ul>
+<p>If these don't exist or haven't updated as you expect, double-check the workspace name and the status of the jobs on the <a href="https://jobs.opensafely.org"><abbr title="a website where you can request runs of all or some of your project pipeline outputs">job server</abbr></a>.</p>
+</li>
+<li>
+<p>Open a console with this folder as root directory, using <code>cd /d/Level4Files/workspaces/&lt;NAME_OF_YOUR_WORKSPACE&gt;</code>.</p>
+</li>
+<li>If this is the first time any releases have been made for this workspace, run <code>git init</code> to create a new git repo there.</li>
+<li>Run <code>git status</code> to see the changes made by the job(s) (if this says <code>fatal: not a git repository</code> then you need to run <code>git init</code>).</li>
+<li>Run <code>git add &lt;names-of-files&gt;</code> to add any new files, or changes to any existing files, to the local repo.</li>
+<li>Edit or delete files to redact as necessary:<ul>
+<li><a href="./#disclosivity-checks-and-redaction"><strong>Read the redaction instructions below</strong></a>.</li>
+<li>Use <code>GitHub desktop</code> or command line <code>git</code> to view the diffs and commit changes to the repo.</li>
+<li>Any previously-applied redactions from previously-run actions will need to be reapplied &mdash; these will be easy to spot in GitHub desktop, and you can choose to simply not commit any files if the redacted version will be identical between the previous and current runs.</li>
+</ul>
+</li>
+<li>Only once you're satisfied that the outputs are safe to release, run <code>osrelease &lt;github_remote_https_url&gt;</code> (e.g. <code>osrelease https://github.com/opensafely/my-amazing-research</code>) and follow the instructions. </li>
+</ol>
+<p>Once finished, any files you have committed locally will be visible in the <code>released_ouputs</code> folder on the <code>release-candidates</code> branch on your repo (e.g., <code>https://github.com/opensafely/my-amazing-research/tree/release-candidates</code>). 
+This branch won't contain any of the intermediate git history, just the state of the redaction repo when you ran the <code>osrelease</code> command. </p>
+<p>You can merge the <code>released-candidates</code> branch onto another branch by creating a pull request. 
+If you want to merge onto a branch that isn't the <code>main</code> branch, don't forget to select the correct <code>base:</code> branch from the drop-down box when creating the pull request.</p>
+<details>
+  <summary>Click here to read in more detail about the `osrelease` command.</summary>
+
+The `osrelease` command runs the `release.py` script in the [`output-publisher` repo](https://github.com/opensafely/output-publisher). It:
+
+* prompts the reviewer for the URL of a github repo to where the redacted outputs should be published (the *study repo*)
+* checks out the *study repo* and creates a branch `release-candidates` (if it doesn't already exist)
+* copies every file that has been committed to the *redaction repo* into a subfolder `released_outputs`
+* creates or updates an index file at `released_outputs/README.md` with links to all the release files
+* adds all new changes as a single commit, using the most recent commit message in the *redaction repo* as the text. It also appends a trailer indicating from where the commit was originated
+* force-pushes `release-candidates` to the study repo
+* outputs a URL to the "create Pull Request" page in github for the `release-candidates` branch of the study repo
+
+The benefit of maintaining a separate *redaction repo* is that when new outputs
+are generated and written to that repo, the usual git tools can be used to diff
+outputs, making it easier to reapply redactions or decide where new redactions
+should be applied.
+
+</details>
+
+<h2 id="disclosivity-checks-and-redaction">Disclosivity checks and redaction<a class="headerlink" href="#disclosivity-checks-and-redaction" title="Permanent link">&#128279;</a></h2>
+<p>Work through the moderately sensitive files in the workspace folder systematically to identify any tables, figures, and other outputted text and objects that may be a disclosure risk. 
+<strong>The general principle is that any statistic describing 5 or fewer patients, either directly or indirectly, should be redacted</strong>.
+For example: </p>
+<ul>
+<li>Frequency tables containing counts between 1-5 should be redacted. The whole table, or at a minimum multiple rows within the table, should be redacted because values removed by single cell (or row, or column) redaction could be inferred from unredacted values. </li>
+<li>Summaries of numeric variables describing 5 or fewer patients should be redacted. </li>
+<li>Graphical figures whose underlying values describe 5 or fewer patients should be redacted. Figures which include print-outs of patient counts (such as KM plots) should be checked and redacted. </li>
+<li>Counts of zero can be retained. </li>
+<li>Other outputs, such as log files that reveal information about the underlying data, should also be checked and redacted if necessary.</li>
+</ul>
+<p>Where possible it should be clear what has been redacted, so for example do not redact table titles and category names. 
+By convention redactions take the form <code>[REDACTED]</code> to make redacted elements easier to search for.</p>
+<p>Ideally there shouldn't be any files in the folder that are not intended for release (whether potentially disclosive or not) as these should have been removed by the analysis scripts or placed elsewhere. 
+If they are there, delete them.</p>
+<p>This current approach to disclosure control is conservative and deliberately reduces the need for judgement calls. 
+It may be possible for exceptions to be made if they can be justified as being both analytically necessary and definitely non-disclosive. This must be discussed with the OpenSAFELY team.</p>
+<p>If you are unsure about anything, ask.</p>
+<h2 id="redaction-data-breaches-and-how-to-recover-from-them">Redaction data breaches and how to recover from them<a class="headerlink" href="#redaction-data-breaches-and-how-to-recover-from-them" title="Permanent link">&#128279;</a></h2>
+<h3 id="the-issues">The issues<a class="headerlink" href="#the-issues" title="Permanent link">&#128279;</a></h3>
+<p>One of the great strengths of using git is that it is easy to recreate the contents of any file in the repository exactly as it appeared at any point in the repository's stored history. However, this means that if any sensitive data is inadvertently committed to a repository, we need to be careful to completely remove that data from the history.</p>
+<p>Access to <code>output-publisher</code> repositories is intended to be restricted, and their histories are not transferred to study repos in the release process. However, study repos are intended to eventually become public, so if sensitive data is committed then care should be taken to fully clean up. From the moment that the <code>osrelease</code> command is run in an <code>output-publisher</code> repo, we need to be careful with the study repo's git history.</p>
+<p>For example, if sensitive data was committed to a study repo, it is explicitly not safe to use either git's <code>revert</code> command, or to delete the file and commit the deletion. Both of these methods would leave the commit containing the sensitive data in the history of the git repository - and would be trivial for anyone to recover in the future.</p>
+<p>Another aspect of git is that it uses a decentralised model. This means that everyone that has a copy of a git repository has their own copy of the entire history. So, if there is a sensitive data leak, it is not sufficient to clean just your own copy of the git history &amp; the history on github, you should also clean the git histories of all other copies.</p>
+<h2 id="what-to-do-if-you-find-a-data-breach">What to do if you find a data breach<a class="headerlink" href="#what-to-do-if-you-find-a-data-breach" title="Permanent link">&#128279;</a></h2>
+<p>If you discover files in a study repository that have been insufficiently redacted and still contain sensitive information, you should contact Amir Mehrkahr or Ben Goldacre as soon as possible.</p>
+<p>If you are able, you can attempt to make the repository safe by temporarily restricting access to it. For instance, if the repository is public (accessible to the world), make it private (accessible only to the OpenSAFELY team). If the repository has external contributors that are not authorised to handle sensitive data, consider temporarily removing their access to the repository. This will reduce the scope for harm until the sensitive information can be removed from the repository.</p>
+<p>If you are an author of the study, you should also liaise with an engineer from the OpenSAFELY team as soon as possible to safely clean the sensitive information from the repository. Depending on the exact situation this may be relatively straightforward or relatively complicated. You should also attempt to trace all copies of the repository for cleaning or deletion.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../pipelines/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Running and testing code
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../good-practice-intro/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Good practice
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

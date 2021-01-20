@@ -1,0 +1,1767 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Study definitions - OpenSAFELY documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-a-study-definition" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="OpenSAFELY documentation" class="md-header-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OpenSAFELY documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Study definitions
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenSAFELY documentation" class="md-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OpenSAFELY documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      How OpenSAFELY works
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="How OpenSAFELY works" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        How OpenSAFELY works
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-methods/" class="md-nav__link">
+      Our philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coming-soon/" class="md-nav__link">
+      Not just another TRE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security-levels/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow/" class="md-nav__link">
+      Analysis workflow
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Data sources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Data sources" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Data sources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-systmone/" class="md-nav__link">
+      Primary care records
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-sgsscovid/" class="md-nav__link">
+      Covid-19 test results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-ecds/" class="md-nav__link">
+      Emergency attendances
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-apc/" class="md-nav__link">
+      Hospital admissions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-icnarc/" class="md-nav__link">
+      Intensive care admissions (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-cpns/" class="md-nav__link">
+      In-hospital deaths (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-onsdeaths/" class="md-nav__link">
+      Registered deaths
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-and-git/" class="md-nav__link">
+      GitHub and Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../opensafely-cli/" class="md-nav__link">
+      OpenSAFELY CLI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-macos/" class="md-nav__link">
+      macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" class="md-nav__link">
+      Project repositories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Study definitions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Study definitions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-study-definition" class="md-nav__link">
+    What is a Study Definition?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#study_definitionpy-structure" class="md-nav__link">
+    study_definition.py structure
+  </a>
+  
+    <nav class="md-nav" aria-label="study_definition.py structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-code-building-blocks" class="md-nav__link">
+    Importing code building blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-example" class="md-nav__link">
+    A simple example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codelists" class="md-nav__link">
+    Codelists
+  </a>
+  
+    <nav class="md-nav" aria-label="Codelists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pulling-codelists-into-your-study-definition" class="md-nav__link">
+    Pulling Codelists into your Study Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-codelists" class="md-nav__link">
+    Combining codelists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-time-periods" class="md-nav__link">
+    Defining time periods
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining time periods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#index-dates" class="md-nav__link">
+    Index Dates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-periods" class="md-nav__link">
+    Time periods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-and-extracting-variables" class="md-nav__link">
+    Defining and extracting variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining and extracting variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-values-and-unmatched-records" class="md-nav__link">
+    Missing values and unmatched records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-that-return-value-date-pairs" class="md-nav__link">
+    Variables that return value-date pairs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-dummy-data" class="md-nav__link">
+    Defining dummy data
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining dummy data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-default-distributions" class="md-nav__link">
+    Specifying default distributions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-variable-specific-distributions" class="md-nav__link">
+    Specifying variable-specific distributions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-options" class="md-nav__link">
+    All options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-study-populations" class="md-nav__link">
+    Defining study populations
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining study populations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-variables-to-define-your-population" class="md-nav__link">
+    Using variables to define your population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-time-registered-in-one-practice" class="md-nav__link">
+    Using time registered in one practice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-population-criteria" class="md-nav__link">
+    Combining population criteria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dummy-data-versus-real-data" class="md-nav__link">
+    Dummy data versus real data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-study-definitions" class="md-nav__link">
+    Multiple study definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiple study definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    Naming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-common-study-definition-variables" class="md-nav__link">
+    Sharing common study definition variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-specific-study-definitions" class="md-nav__link">
+    Define the specific study definitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-variables/" class="md-nav__link">
+      Study definition variable reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cohortextractor/" class="md-nav__link">
+      cohortextractor
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-flowcharts/" class="md-nav__link">
+      Inclusion/exclusion flow charts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../measures/" class="md-nav__link">
+      Measures
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Codelists
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Codelists" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Codelists
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-intro/" class="md-nav__link">
+      Introduction to codelists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-creation/" class="md-nav__link">
+      Building a codelist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-project/" class="md-nav__link">
+      Adding codelists to Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-snomed/" class="md-nav__link">
+      SNOMED codelists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../pipelines/" class="md-nav__link">
+      Running and testing code
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../releasing-files/" class="md-nav__link">
+      Releasing files from the server
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Good Practice
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Good Practice" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon"></span>
+        Good Practice
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../good-practice-intro/" class="md-nav__link">
+      Good practice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-data-manifesto/" class="md-nav__link">
+      The Datalab Open Manifesto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protocol/" class="md-nav__link">
+      Developing a protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-workflow/" class="md-nav__link">
+      Using Git effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-reviews/" class="md-nav__link">
+      Code reviews
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Feature requests, bug reports
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Feature requests, bug reports" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon"></span>
+        Feature requests, bug reports
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-packages/" class="md-nav__link">
+      Adding packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-variables/" class="md-nav__link">
+      Adding Study Definition variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-documentation/" class="md-nav__link">
+      Updating the Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-study-definition" class="md-nav__link">
+    What is a Study Definition?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#study_definitionpy-structure" class="md-nav__link">
+    study_definition.py structure
+  </a>
+  
+    <nav class="md-nav" aria-label="study_definition.py structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-code-building-blocks" class="md-nav__link">
+    Importing code building blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-example" class="md-nav__link">
+    A simple example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codelists" class="md-nav__link">
+    Codelists
+  </a>
+  
+    <nav class="md-nav" aria-label="Codelists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pulling-codelists-into-your-study-definition" class="md-nav__link">
+    Pulling Codelists into your Study Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-codelists" class="md-nav__link">
+    Combining codelists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-time-periods" class="md-nav__link">
+    Defining time periods
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining time periods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#index-dates" class="md-nav__link">
+    Index Dates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-periods" class="md-nav__link">
+    Time periods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-and-extracting-variables" class="md-nav__link">
+    Defining and extracting variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining and extracting variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-values-and-unmatched-records" class="md-nav__link">
+    Missing values and unmatched records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-that-return-value-date-pairs" class="md-nav__link">
+    Variables that return value-date pairs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-dummy-data" class="md-nav__link">
+    Defining dummy data
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining dummy data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-default-distributions" class="md-nav__link">
+    Specifying default distributions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-variable-specific-distributions" class="md-nav__link">
+    Specifying variable-specific distributions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-options" class="md-nav__link">
+    All options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-study-populations" class="md-nav__link">
+    Defining study populations
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining study populations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-variables-to-define-your-population" class="md-nav__link">
+    Using variables to define your population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-time-registered-in-one-practice" class="md-nav__link">
+    Using time registered in one practice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-population-criteria" class="md-nav__link">
+    Combining population criteria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dummy-data-versus-real-data" class="md-nav__link">
+    Dummy data versus real data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-study-definitions" class="md-nav__link">
+    Multiple study definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiple study definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    Naming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-common-study-definition-variables" class="md-nav__link">
+    Sharing common study definition variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-specific-study-definitions" class="md-nav__link">
+    Define the specific study definitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Study definitions</h1>
+                
+                <h2 id="what-is-a-study-definition">What is a Study Definition?<a class="headerlink" href="#what-is-a-study-definition" title="Permanent link">&#128279;</a></h2>
+<p>A <em><abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr></em> is a formal specification of the data that you want to extract from the OpenSAFELY database. This includes:</p>
+<ul>
+<li>the patient population (dataset rows)</li>
+<li>the variables (dataset columns)</li>
+<li>the expected distributions of these variables for use in dummy data</li>
+</ul>
+<p>It is written in the Python programming language, using an OpenSAFELY-specific
+format which is intended to be easily written, read, and reviewed by anyone with
+some epidemiological knowledge.</p>
+<div class="admonition note">
+<p class="admonition-title">Some knowledge of python is helpful!</p>
+<p>The following documentation should get you through most cases, but
+some will make little sense to a non-Python programmer.  It is on our
+roadmap to replace the Python-based approach with a configuration-based
+approach which is more secure, and can be driven from a graphical user interface.</p>
+</div>
+<p>The OpenSAFELY framework case use a single <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> to query different
+vendor <abbr title="Electronic Health Record">EHR</abbr> databases, and saves the results to the secure server in a CSV file
+of tabular data.</p>
+<p>A <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> also allows a researcher to define the shape of the values they <em>expect</em> to get back from the vendor data.
+This allows the framework to generate dummy data which the researcher can use to develop and test their analysis scripts, without ever having to touch real patient data.</p>
+<p>When you generate a study population from your <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr>, the framework reads a <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> from the python script (usually <code>analysis/study_definition.py</code>), and writes the output data frame in a tabular CSV file (usually <code>output/input.csv</code>).
+In a production environment this file will contain real data; in a development environment this will be dummy data.</p>
+<p>Currently the framework supports one row per patient datasets.</p>
+<h2 id="study_definitionpy-structure"><code>study_definition.py</code> structure<a class="headerlink" href="#study_definitionpy-structure" title="Permanent link">&#128279;</a></h2>
+<h3 id="importing-code-building-blocks">Importing code building blocks<a class="headerlink" href="#importing-code-building-blocks" title="Permanent link">&#128279;</a></h3>
+<p>To create the <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr>, we first need to import the functions and code to create this.
+You will need to put this codeblock at the top of your python file.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">cohortextractor</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">StudyDefinition</span><span class="p">,</span>
+    <span class="n">patients</span><span class="p">,</span>
+    <span class="n">codelist_from_csv</span><span class="p">,</span>
+    <span class="n">codelist</span><span class="p">,</span>
+    <span class="n">filter_codes_by_category</span><span class="p">,</span>
+    <span class="n">combine_codelists</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>This essentially says we want to import the some functions from the <code>cohortextractor</code> package which will be used throughout the script.</p>
+<h3 id="a-simple-example">A simple example<a class="headerlink" href="#a-simple-example" title="Permanent link">&#128279;</a></h3>
+<p>The <code>StudyDefinition()</code> function (imported above) is used to define both the study population and the variables.</p>
+<div class="highlight"><pre><span></span><code><span class="n">study</span> <span class="o">=</span> <span class="n">StudyDefinition</span><span class="p">(</span>
+
+    <span class="c1"># define default dummy data behaviour</span>
+    <span class="n">default_expectations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;earliest&quot;</span><span class="p">:</span> <span class="s2">&quot;1970-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;latest&quot;</span><span class="p">:</span> <span class="s2">&quot;today&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;uniform&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;incidence&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+
+    <span class="c1"># define the study index date</span>
+    <span class="n">index_date</span> <span class="o">=</span> <span class="s2">&quot;2020-01-01&quot;</span>
+
+    <span class="c1"># define the study population</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+
+    <span class="c1"># define the study variables</span>
+
+    <span class="n">age</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">age_as_of</span><span class="p">(</span><span class="n">index_date</span><span class="p">)</span>
+
+    <span class="c1"># more variables ...</span>
+
+<span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>default_expectations=</code> is used to set default behaviour for the dummy data that is generated.
+In this case, we expect event dates to be between <code>1970-01-01</code> and today's date, uniformly distributed in that period, and to be recorded for 20% of patients (returning empty <code>""</code> values otherwise).
+See <a href="#defining-dummy-data">Defining dummy data</a> for more details.</li>
+<li><code>index_date=</code> is used to set the index date against which all other dates can be defined.
+See <a href="#defining_time_periods">Defining time periods</a> for more details on how the index date is used.</li>
+<li><code>population=</code> is where the population is defined.
+In this case, we want all patients available in the OpenSAFELY database and so we use the method <code>all()</code> to indicate this.
+See the <a href="">study population section</a> for more details on how to select a specific subset of patients in the OpenSAFELY database.</li>
+</ul>
+<p>The <code>default_expectations</code>, <code>index_date</code>, and <code>population</code> arguments are reserved names within <code>StudyDefinition()</code>.
+All other names are used to define the variables that will appear in the outputted dataset, using <em>variable extractor functions</em> of the form <code>patients.function_name</code>.</p>
+<p><code>age=</code> is a simple example of an extractor function in use.
+The <code>patients.age_as_of()</code> function returns the age of each patient as of the date provided (in this case the <code>index_date</code>).</p>
+<p>All other variables are defined similarly.
+To see the full list of currently available extractor functions, see <a href="../study-def-variables/">Study definition variables reference</a>.</p>
+<h2 id="codelists">Codelists<a class="headerlink" href="#codelists" title="Permanent link">&#128279;</a></h2>
+<p>For more information about how to create and edit codelists on the <a href="https://codelists.opensafely.org">OpenSAFELY Codelists</a> website, see <a href="../codelist-intro/">Codelists</a>.</p>
+<h3 id="pulling-codelists-into-your-study-definition">Pulling Codelists into your Study Definition<a class="headerlink" href="#pulling-codelists-into-your-study-definition" title="Permanent link">&#128279;</a></h3>
+<p>Many functions for defining variables take <em>codelists</em> as arguments.
+Codelists live as CSV files in the <code>codelists/</code> directory, and are loaded into variables like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">chronic_cardiac_disease_codes</span> <span class="o">=</span> <span class="n">codelist_from_csv</span><span class="p">(</span>
+    <span class="s2">&quot;codelists/opensafely-chronic-cardiac-disease.csv&quot;</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="s2">&quot;ctv3&quot;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;CTV3ID&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>You should put code that creates <abbr title="a collection of clinical codes that define a particular condition, event or diagnosis.">codelist</abbr> variables before your <code>StudyDefinition()</code>, so it can refer to them, and users know where to look.</p>
+<p>You can do this in <code>analysis/study_definition.py</code>, but we recommend that you put all your <abbr title="a collection of clinical codes that define a particular condition, event or diagnosis.">codelist</abbr> definitions into a file called <code>codelists.py</code> and importing it in at the top of your file:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">codelists</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+<p>This keeps it cleaner and easier to read.</p>
+<h3 id="combining-codelists">Combining codelists<a class="headerlink" href="#combining-codelists" title="Permanent link">&#128279;</a></h3>
+<p>Codelists can be combined where appropriate.
+This has the advantage of keeping codeslists separate for some studies but easily combining them for others.</p>
+<p>Codelists can be combined using the <code>combine_codelist</code> function from <code>cohortextractor</code>, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">cohortextractor</span> <span class="kn">import</span> <span class="n">combine_codelists</span>
+
+<span class="n">all_cardiac_disease_codes</span> <span class="o">=</span> <span class="n">combine_codelists</span><span class="p">(</span>
+    <span class="n">chronic_cardiac_disease_codes</span><span class="p">,</span>
+    <span class="n">acute_cardiac_disease_codes</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="defining-time-periods">Defining time periods<a class="headerlink" href="#defining-time-periods" title="Permanent link">&#128279;</a></h2>
+<h3 id="index-dates">Index Dates<a class="headerlink" href="#index-dates" title="Permanent link">&#128279;</a></h3>
+<p>If you define an <code>index_date</code> on a <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> then everywhere that you might normally supply a date you can now supply a "date expression".</p>
+<p>Here is a simple example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">study</span> <span class="o">=</span> <span class="n">StudyDefinition</span><span class="p">(</span>
+    <span class="n">index_date</span> <span class="o">=</span> <span class="s2">&quot;2015-06-01&quot;</span><span class="p">,</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">with_these_clinical_events</span><span class="p">(</span>
+        <span class="n">copd_codes</span><span class="p">,</span>
+        <span class="n">between</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;first_day_of_year(index_date) - 2 years&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;last_day_of_year(index_date)&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">),</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">age_as_of</span><span class="p">(</span><span class="s2">&quot;index_date&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>This can make it easier to change the index date of a study by making sure it is only defined in once place.</p>
+<p>The simplest date expression is just <code>index_date</code>, which gets replaced by whatever the index date is set to.</p>
+<p>It's also possible to apply various functions to the index date.
+The available options (hopefully self-explanatory) are:</p>
+<div class="highlight"><pre><span></span><code><span class="n">first_day_of_month</span><span class="p">(</span><span class="n">index_date</span><span class="p">)</span>
+<span class="n">last_day_of_month</span><span class="p">(</span><span class="n">index_date</span><span class="p">)</span>
+<span class="n">first_day_of_year</span><span class="p">(</span><span class="n">index_date</span><span class="p">)</span>
+<span class="n">last_day_of_year</span><span class="p">(</span><span class="n">index_date</span><span class="p">)</span>
+</code></pre></div>
+<p>Finally, intervals of time can be added or subtracted from the index date (or from a function applied to the index date).
+The available units are <code>year(s)</code>, <code>month(s)</code> and <code>day(s)</code>.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">index_date</span> <span class="o">+</span> <span class="mi">90</span> <span class="n">days</span>
+<span class="n">first_day_of_month</span><span class="p">(</span><span class="n">index_date</span><span class="p">)</span> <span class="o">+</span> <span class="mi">9</span> <span class="n">months</span>
+<span class="n">index_date</span> <span class="o">-</span> <span class="mi">1</span> <span class="n">year</span>
+</code></pre></div>
+<p>Note that if the index date is 29 February and you add or subtract some number of years which doesn't lead to a leap year, then an error will be thrown.
+An error will also be show if adding or subtracting months leads to a month with no equivalent day e.g. adding 1 month to 31 January to produce 31 February.</p>
+<h3 id="time-periods">Time periods<a class="headerlink" href="#time-periods" title="Permanent link">&#128279;</a></h3>
+<p>Most variable extractor functions have arguments for specifying the date range over which you want to retrieve information.
+Most commonly this is <code>on_or_before=</code>, <code>on_or_after=</code>, or <code>between=</code> (see the <a href="../study-def-variables/">variable reference</a> for full documentation).
+You must use at most one.
+If no option is given then it will use all dates (including possibly future dates).</p>
+<p>As well as specifying dates explicitly with e.g., <code>on_or_before="2019-12-31"</code>, you can use the date expressions discussed above.</p>
+<h2 id="defining-and-extracting-variables">Defining and extracting variables<a class="headerlink" href="#defining-and-extracting-variables" title="Permanent link">&#128279;</a></h2>
+<p>All variables that you want to include in your dataset are declared within the <code>StudyDefinition()</code> function, using functions of the form <code>patients.function_name()</code>.</p>
+<p>To see the full documentation for all the variables that can be extracted with queries to the OpenSAFELY database, see <a href="../study-def-variables/">Study Definition variable reference</a>.</p>
+<h3 id="missing-values-and-unmatched-records">Missing values and unmatched records<a class="headerlink" href="#missing-values-and-unmatched-records" title="Permanent link">&#128279;</a></h3>
+<p>If a query returns no matching record for a patient &mdash; for example if there are no blood pressure values recorded in a given period, or if there is no death date because the patient hasn't died, or if there is no household size available &mdash; then a default value will be returned.
+For strings and dates, the default value is the empty string <code>""</code>.
+For booleans, integers, or floats, the default value is <code>0</code>.</p>
+<p>There is no universal <code>null</code> value outputted to <code>input.csv</code> because these may be handled inconsistently across different programs.</p>
+<p>It's possible that a record is matched, but the value is not valid.
+In this case, the value will be returned as-is.
+For example, a date set to <code>"9999-99-99"</code> or a blood pressure reading set to <code>-1</code>.
+These will indicate missing / unknown / unrecorded / not applicable values in the source dataset.
+The meaning of these values will depend on the data source, and this should be documented in the <a href="../dataset-intro/">dataset documentation</a>.</p>
+<h3 id="variables-that-return-value-date-pairs">Variables that return value-date pairs<a class="headerlink" href="#variables-that-return-value-date-pairs" title="Permanent link">&#128279;</a></h3>
+<p>Some functions will produce two variables: a value and the corresponding date.
+In this case, expectations for both the value and the date can be specified, for example as follows:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">sbp</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">mean_recorded_value</span><span class="p">(</span>
+    <span class="n">systolic_blood_pressure_codes</span><span class="p">,</span>
+    <span class="n">on_most_recent_day_of_measurement</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">include_measurement_date</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">on_or_after</span> <span class="o">=</span> <span class="n">index_date</span><span class="p">,</span>
+    <span class="n">date_format</span> <span class="o">=</span> <span class="s2">&quot;YYYY-MM-DD&quot;</span><span class="p">,</span>
+    <span class="n">return_expectations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;incidence&quot;</span> <span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+        <span class="s2">&quot;float&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;distribution&quot;</span><span class="p">:</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">:</span> <span class="mi">110</span><span class="p">,</span> <span class="s2">&quot;stddev&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+        <span class="s2">&quot;date&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;earliest&quot;</span><span class="p">:</span> <span class="n">index_date</span><span class="p">,</span> <span class="s2">&quot;latest&quot;</span><span class="p">:</span> <span class="s2">&quot;today&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;rate&quot;</span> <span class="p">:</span> <span class="s2">&quot;uniform&quot;</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div>
+This says that we expect the returned systolic blood pressure values to be normally distributed and available for 80% of patients, at dates between the <code>index_date</code> and <code>"today"</code>'s date. The date of the most recent measurement is distributed uniformly between those dates.</p>
+<h2 id="defining-dummy-data">Defining dummy data<a class="headerlink" href="#defining-dummy-data" title="Permanent link">&#128279;</a></h2>
+<p>Every variable in a <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> must have a <code>return_expectations</code> argument defined (with the exception of the <code>population</code> variable).
+This defines the general shape or distribution of the variables in the dummy data used for developing the code.  It is currently relatively unsophisticated; each variable is generated independently of all others. This is sufficient for testing that it is possible to run your study from start to finish in most cases, but sometimes not. You can find (and contribute to!) discussions on improving the dummy data framework <a href="https://github.com/opensafely/cohort-extractor/issues/221">here</a></p>
+<h3 id="specifying-default-distributions">Specifying default distributions<a class="headerlink" href="#specifying-default-distributions" title="Permanent link">&#128279;</a></h3>
+<p>All variables use a default defined at the top of the <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr>, with the <code>default_expectations</code> argument, as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">study</span> <span class="o">=</span> <span class="n">StudyDefinition</span><span class="p">(</span>
+    <span class="c1"># Configure the expectations framework</span>
+    <span class="n">default_expectations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;earliest&quot;</span><span class="p">:</span> <span class="s2">&quot;1900-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;latest&quot;</span><span class="p">:</span> <span class="s2">&quot;today&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;exponential_increase&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;incidence&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>In this case, we are saying that:
+* Events dates are expected to be distributed between 1900 and today, with exponentially-increasing frequenc, with events occurring for 50% of patients.
+* Values for binary variables are expected to be positive 50% of the time.
+* Values for categorical variables are expected to be present (i.e., non-missing) 50% of the time.
+* Values for numeric variables are expected to be present (i.e., non-missing) 50% of the time.</p>
+<h3 id="specifying-variable-specific-distributions">Specifying variable-specific distributions<a class="headerlink" href="#specifying-variable-specific-distributions" title="Permanent link">&#128279;</a></h3>
+<p>If the defaults need to be overridden, then use the <code>return_expectations</code> argument within the variable extractor function, for example as follows:</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="n">copd</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">with_these_clinical_events</span><span class="p">(</span>
+        <span class="n">copd_codes</span><span class="p">,</span>
+        <span class="n">returning</span> <span class="o">=</span> <span class="s2">&quot;binary_flag&quot;</span><span class="p">,</span>
+        <span class="n">find_first_match_in_period</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">between</span> <span class="o">=</span> <span class="p">[</span><span class="n">index_date</span><span class="p">,</span> <span class="s2">&quot;today&quot;</span><span class="p">],</span>
+        <span class="n">return_expectations</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;incidence&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
+    <span class="p">),</span>
+</code></pre></div>
+This overrides the 50% default incidence for the binary variable <code>copd</code> to be 20% instead.</p>
+<h3 id="all-options">All options<a class="headerlink" href="#all-options" title="Permanent link">&#128279;</a></h3>
+<p>The following options are currently available for dummy data:</p>
+<p><strong>integers</strong></p>
+<ul>
+<li><code>{"int" : {"distribution": "normal", "mean": 25, "stddev": 5}, "incidence" : 0.5}</code></li>
+<li><code>{"int" : {"distribution": "population_ages"}, "incidence" : 1}</code></li>
+</ul>
+<p><strong>numeric</strong></p>
+<ul>
+<li><code>{"float" : {"distribution": "normal", "mean": 25, "stddev": 5}, "incidence" : 0.75}</code></li>
+</ul>
+<p><strong>binary</strong></p>
+<ul>
+<li><code>{"incidence": 0.33}</code></li>
+</ul>
+<p><strong>categorical</strong></p>
+<ul>
+<li><code>{"category": {"ratios": {"cat1": 0.1, "cat2": 0.2, "cat3": 0.7}}, "incidence" : 1}</code></li>
+</ul>
+<p><strong>date</strong></p>
+<ul>
+<li><code>{"date": {"earliest": "1900-01-01", "latest": "today"}, "rate" : "exponential_increase"}</code></li>
+<li><code>{"date": {"earliest": "1900-01-01", "latest": "today"}, "rate" : "uniform"}</code></li>
+</ul>
+<p>Note that <code>"incidence"</code> is used either for the actual incidence of a binary variable (<code>returning="binary_flag"</code>), or to indicate non-missingness for other variable types.
+<code>"rate"</code> is used for the distribution of date values (with either <code>"exponential_increase"</code> or <code>"uniform"</code>), but can also be used as an alias for <code>incidence=1</code> by specifying <code>rate="universal"</code> for non-date values.</p>
+<p><code>population_ages</code> samples from the distribution of ages in the UK taken from <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/datasets/tablea21principalprojectionukpopulationinagegroups">the Office for National Statistics</a>.</p>
+<h2 id="defining-study-populations">Defining study populations<a class="headerlink" href="#defining-study-populations" title="Permanent link">&#128279;</a></h2>
+<p>Most commonly, you will want to include only patients with certain characteristics, rather than every patient in the database.</p>
+<h3 id="using-variables-to-define-your-population">Using variables to define your population<a class="headerlink" href="#using-variables-to-define-your-population" title="Permanent link">&#128279;</a></h3>
+<p>To define a study population with one particular characteristic, you need to define the characteristic within the study
+population.</p>
+<div class="highlight"><pre><span></span><code><span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">with_these_clinical_events</span><span class="p">(</span>
+    <span class="n">copd_codes</span><span class="p">,</span>
+    <span class="n">on_or_before</span> <span class="o">=</span> <span class="s2">&quot;2017-03-01&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="using-time-registered-in-one-practice">Using time registered in one practice<a class="headerlink" href="#using-time-registered-in-one-practice" title="Permanent link">&#128279;</a></h3>
+<p>Researchers often want to exclude patients who have switched practice recently and hence may have an incomplete record of their conditions as it can take some time for their records to come from their previous practice.</p>
+<div class="highlight"><pre><span></span><code><span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">registered_with_one_practice_between</span><span class="p">(</span>
+        <span class="s2">&quot;2019-03-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-03-01&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="combining-population-criteria">Combining population criteria<a class="headerlink" href="#combining-population-criteria" title="Permanent link">&#128279;</a></h3>
+<p>Population criteria may need to be combined.
+Here we have combined both COPD and registration details to find only patients who have COPD and have been registered at a practice for more than a year.</p>
+<div class="highlight"><pre><span></span><code><span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">satisfying</span><span class="p">(</span>
+    <span class="s2">&quot;has_follow_up AND has_copd&quot;</span><span class="p">,</span>
+    <span class="n">has_copd</span><span class="o">=</span><span class="n">patients</span><span class="o">.</span><span class="n">with_these_clinical_events</span><span class="p">(</span>
+        <span class="n">copd_codes</span><span class="p">,</span>
+        <span class="n">on_or_before</span> <span class="o">=</span> <span class="s2">&quot;2017-03-01&quot;</span>
+    <span class="p">),</span>
+    <span class="n">has_follow_up</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">registered_with_one_practice_between</span><span class="p">(</span>
+        <span class="s2">&quot;2019-03-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-03-01&quot;</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>If a variable has been defined elsewhere in <code>StudyDefinition()</code>, then that variable can be used in the <code>patients.satisfying()</code> function without needing to be defined again.
+For example,</p>
+<div class="highlight"><pre><span></span><code><span class="n">study</span> <span class="o">=</span> <span class="n">StudyDefinition</span><span class="p">(</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">satisfying</span><span class="p">(</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        has_follow_up AND</span>
+<span class="sd">        (sex = &quot;M&quot; OR sex = &quot;F&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="n">has_follow_up</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">registered_with_one_practice_between</span><span class="p">(</span>
+            <span class="s2">&quot;2019-03-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-03-01&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">sex</span> <span class="o">=</span> <span class="n">patients</span><span class="o">.</span><span class="n">sex</span><span class="p">(</span>
+        <span class="s2">&quot;incidence&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">returning_expectations</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ratios&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="mf">0.49</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="mf">0.51</span><span class="p">}}}</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Here <code>sex</code> is <em>defined</em> outside of <code>patients.satisfying()</code> but can still be <em>used</em> inside of it.
+In this case, it's being used to exclude patients without a "valid" sex category (<code>"M"</code> or <code>"F"</code>) from the study population.</p>
+<h3 id="dummy-data-versus-real-data">Dummy data versus real data<a class="headerlink" href="#dummy-data-versus-real-data" title="Permanent link">&#128279;</a></h3>
+<p>The <code>population=</code> argument has no bearing at all on the dummy data. It is just used to select patients in the real data.
+If in the example above we had <code>"incidence" : 0.95</code>, then 5% of patients in the dummy data would have missing sex values, but 0% of patients in the real data would have missing sex values because they have been excluded with <code>population=</code>.
+It's important therefore to match the dummy data with what you would expect to see <em>conditional on</em> the chosen patient population, rather than in the data as a whole.</p>
+<h2 id="multiple-study-definitions">Multiple study definitions<a class="headerlink" href="#multiple-study-definitions" title="Permanent link">&#128279;</a></h2>
+<h3 id="naming">Naming<a class="headerlink" href="#naming" title="Permanent link">&#128279;</a></h3>
+<p>A <code>study_definition.py</code> will produce a file called <code>input.csv</code>.
+If you only require one study population, we recommend you stick with this.</p>
+<p>Multiple <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> files can be specified using a suffix like:</p>
+<div class="highlight"><pre><span></span><code>study_definition_copd.py
+study_definition_asthma.py
+</code></pre></div>
+<p>And all the corresponding output files will have the same suffix e.g.
+<div class="highlight"><pre><span></span><code>input_copd.csv
+input_asthma.csv
+</code></pre></div></p>
+<p>You should reflect this by creating two cohortextractor actions in the <a href="../pipelines/"><code>project.yaml</code></a>, one for each <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.0&quot;</span>
+
+<span class="nt">expectations</span><span class="p">:</span>
+  <span class="nt">population_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+
+<span class="nt">actions</span><span class="p">:</span>
+
+  <span class="nt">generate_copd_cohort</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cohortextractor:latest generate_cohort --study-definition study_definition_copd</span>
+    <span class="nt">outputs</span><span class="p">:</span>
+      <span class="nt">highly_sensitive</span><span class="p">:</span>
+        <span class="nt">cohort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/input_copd.csv</span>
+
+  <span class="nt">generate_asthma_cohort</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cohortextractor:latest generate_cohort --study-definition study_definition_asthma</span>
+    <span class="nt">outputs</span><span class="p">:</span>
+      <span class="nt">highly_sensitive</span><span class="p">:</span>
+        <span class="nt">cohort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/input_asthma.csv</span>
+</code></pre></div>
+<h3 id="sharing-common-study-definition-variables">Sharing common <abbr title="specifies the patients you want to include in your study and defines the variables that describe them. Study definitions are written in a Python script using a human-readable API.">study definition</abbr> variables<a class="headerlink" href="#sharing-common-study-definition-variables" title="Permanent link">&#128279;</a></h3>
+<p>When using multiple study definitions, there's often a lot of common variables between them, with just the population and maybe a couple of other variables that differ.
+This means you have to separately specify the common variables in each definition, and it's easy to make an error, particularly when something needs changing.
+To avoid this, there is a way to share these common variables between study definitions:</p>
+<p>Make a file called <code>common_variables.py</code> containing the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">cohortextractor</span> <span class="kn">import</span> <span class="n">patients</span>
+
+<span class="kn">from</span> <span class="nn">codelists</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+<p>You can then define your common variables in a dictionary (<code>dict</code>) rather than in a <code>StudyDefinition</code>.
+In this case we use age and sex.</p>
+<p><code>common_variables.py</code>
+<div class="highlight"><pre><span></span><code><span class="n">common_variables</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">age</span><span class="o">=</span><span class="n">patients</span><span class="o">.</span><span class="n">age_as_of</span><span class="p">(</span>
+        <span class="s2">&quot;2020-02-01&quot;</span><span class="p">,</span>
+        <span class="n">return_expectations</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;universal&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;int&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;distribution&quot;</span><span class="p">:</span> <span class="s2">&quot;population_ages&quot;</span><span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">),</span>
+    <span class="n">sex</span><span class="o">=</span><span class="n">patients</span><span class="o">.</span><span class="n">sex</span><span class="p">(</span>
+        <span class="n">return_expectations</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;universal&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ratios&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="mf">0.49</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="mf">0.51</span><span class="p">}},</span>
+        <span class="p">}</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div></p>
+<h3 id="define-the-specific-study-definitions">Define the specific study definitions<a class="headerlink" href="#define-the-specific-study-definitions" title="Permanent link">&#128279;</a></h3>
+<p>Within each <code>study_definition_*.py</code>, add the line <code>from common_variables import common_variables</code> near the top with the other imports.
+You then need just before the final closing brackets at the end of the file, add <code>**common_variables</code></p>
+<p><code>study_definition_copd.py</code>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">cohortextractor</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">StudyDefinition</span><span class="p">,</span>
+    <span class="n">patients</span><span class="p">,</span>
+    <span class="n">codelist_from_csv</span><span class="p">,</span>
+    <span class="n">codelist</span><span class="p">,</span>
+    <span class="n">combine_codelists</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">common_variables</span> <span class="kn">import</span> <span class="n">common_variables</span>
+<span class="kn">from</span> <span class="nn">codelists</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">study</span> <span class="o">=</span> <span class="n">StudyDefinition</span><span class="p">(</span>
+    <span class="n">default_expectations</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;earliest&quot;</span><span class="p">:</span> <span class="s2">&quot;1970-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;latest&quot;</span><span class="p">:</span> <span class="s2">&quot;today&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="s2">&quot;uniform&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;incidence&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+
+    <span class="c1"># STUDY POPULATION</span>
+   <span class="n">population</span><span class="o">=</span><span class="n">patients</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+
+    <span class="c1"># COPD</span>
+    <span class="n">copd</span><span class="o">=</span><span class="n">patients</span><span class="o">.</span><span class="n">with_these_clinical_events</span><span class="p">(</span>
+    <span class="n">copd_codes</span><span class="p">,</span>
+    <span class="n">find_first_match_in_period</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">date_format</span><span class="o">=</span><span class="s2">&quot;YYYY-MM&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+
+    <span class="o">**</span><span class="n">common_variables</span>
+<span class="p">)</span>
+</code></pre></div></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../repositories/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Project repositories
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../study-def-variables/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Study definition variable reference
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

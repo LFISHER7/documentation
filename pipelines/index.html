@@ -1,0 +1,1383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Running and testing code - OpenSAFELY documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#general-code-writing-guidance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="OpenSAFELY documentation" class="md-header-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OpenSAFELY documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Running and testing code
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenSAFELY documentation" class="md-nav__button md-logo" aria-label="OpenSAFELY documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OpenSAFELY documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      How OpenSAFELY works
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="How OpenSAFELY works" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        How OpenSAFELY works
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-methods/" class="md-nav__link">
+      Our philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coming-soon/" class="md-nav__link">
+      Not just another TRE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security-levels/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow/" class="md-nav__link">
+      Analysis workflow
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Data sources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Data sources" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Data sources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-systmone/" class="md-nav__link">
+      Primary care records
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-sgsscovid/" class="md-nav__link">
+      Covid-19 test results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-ecds/" class="md-nav__link">
+      Emergency attendances
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-apc/" class="md-nav__link">
+      Hospital admissions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-icnarc/" class="md-nav__link">
+      Intensive care admissions (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-cpns/" class="md-nav__link">
+      In-hospital deaths (covid-19 only)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dataset-onsdeaths/" class="md-nav__link">
+      Registered deaths
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-github-and-git/" class="md-nav__link">
+      GitHub and Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../opensafely-cli/" class="md-nav__link">
+      OpenSAFELY CLI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-macos/" class="md-nav__link">
+      macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" class="md-nav__link">
+      Project repositories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def/" class="md-nav__link">
+      Study definitions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-variables/" class="md-nav__link">
+      Study definition variable reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cohortextractor/" class="md-nav__link">
+      cohortextractor
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../study-def-flowcharts/" class="md-nav__link">
+      Inclusion/exclusion flow charts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../measures/" class="md-nav__link">
+      Measures
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Codelists
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Codelists" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Codelists
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-intro/" class="md-nav__link">
+      Introduction to codelists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-creation/" class="md-nav__link">
+      Building a codelist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-project/" class="md-nav__link">
+      Adding codelists to Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../codelist-snomed/" class="md-nav__link">
+      SNOMED codelists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Running and testing code
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Running and testing code
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-code-writing-guidance" class="md-nav__link">
+    General code-writing guidance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-pipelines" class="md-nav__link">
+    Project pipelines
+  </a>
+  
+    <nav class="md-nav" aria-label="Project pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projectyaml-format" class="md-nav__link">
+    project.yaml format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-environments" class="md-nav__link">
+    Execution environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stata" class="md-nav__link">
+    Stata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-locally" class="md-nav__link">
+    Running your code locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-with-github-actions" class="md-nav__link">
+    Running your code with GitHub actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-on-the-server" class="md-nav__link">
+    Running your code on the server
+  </a>
+  
+    <nav class="md-nav" aria-label="Running your code on the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-outputs" class="md-nav__link">
+    Accessing the outputs
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-have-level-3-access" class="md-nav__link">
+    If you have Level 3 access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-manually-in-the-server" class="md-nav__link">
+    Running your code manually in the server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../releasing-files/" class="md-nav__link">
+      Releasing files from the server
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Good Practice
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Good Practice" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon"></span>
+        Good Practice
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../good-practice-intro/" class="md-nav__link">
+      Good practice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../open-data-manifesto/" class="md-nav__link">
+      The Datalab Open Manifesto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protocol/" class="md-nav__link">
+      Developing a protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-workflow/" class="md-nav__link">
+      Using Git effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-reviews/" class="md-nav__link">
+      Code reviews
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Feature requests, bug reports
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Feature requests, bug reports" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon"></span>
+        Feature requests, bug reports
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-intro/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-packages/" class="md-nav__link">
+      Adding packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-variables/" class="md-nav__link">
+      Adding Study Definition variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests-documentation/" class="md-nav__link">
+      Updating the Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-code-writing-guidance" class="md-nav__link">
+    General code-writing guidance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-pipelines" class="md-nav__link">
+    Project pipelines
+  </a>
+  
+    <nav class="md-nav" aria-label="Project pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projectyaml-format" class="md-nav__link">
+    project.yaml format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-environments" class="md-nav__link">
+    Execution environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stata" class="md-nav__link">
+    Stata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-locally" class="md-nav__link">
+    Running your code locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-with-github-actions" class="md-nav__link">
+    Running your code with GitHub actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-on-the-server" class="md-nav__link">
+    Running your code on the server
+  </a>
+  
+    <nav class="md-nav" aria-label="Running your code on the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-outputs" class="md-nav__link">
+    Accessing the outputs
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-have-level-3-access" class="md-nav__link">
+    If you have Level 3 access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-code-manually-in-the-server" class="md-nav__link">
+    Running your code manually in the server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Running and testing code</h1>
+                
+                <p>This section covers how to develop, run, and test your code to ensure it will work end-to-end within the secure framework.</p>
+<h2 id="general-code-writing-guidance">General code-writing guidance<a class="headerlink" href="#general-code-writing-guidance" title="Permanent link">&#128279;</a></h2>
+<p>Generally-speaking, you can write whatever code you like as long as it will run successfully on server, and it is possible to <a href="./#running-your-code-locally">test this locally</a>.
+However, note the following restrictions and guidance:</p>
+<ul>
+<li><strong>Write analyses in Python, R, or Stata.</strong>
+You can can use more than one language in a single project if necessary.  You can find more information about the available libraries <a href="./#execution-environments">here</a>.</li>
+<li><strong>Do not write code that requires an internet connection to run.</strong>
+Any research objects (datasets, libraries, etc) that are retrieved via the internet should be imported to the repo locally first.
+If this is not possible (for instance if the object size is too large to be transferred via GitHub) then get in touch.</li>
+<li><strong>Avoid code that consumes a lot of time or memory.</strong> The server is not an infinite resource. We can advise on code optimisation if run-times become problematic.  A good strategy is to split you processing into separate <abbr title="defines how different scripts within the project’s analytic code should be run: in what order, with which versions of which software, etc; defined in a file named `project.yaml`">project pipeline</abbr> actions; the <abbr title="runs the actions defined in the project pipeline using real data, in a secure environment">job runner</abbr> can then choose to run them in parallel if sufficient resources are available.</li>
+<li><strong>Write code that runs across different platforms.</strong>
+Since code will be run both locally and within a Linux-based Docker environment. For example use forward-slashes <code>/</code> for directories.</li>
+<li><strong>Structure your code into discrete chunks, both within scripts, and by splitting into different pipeline actions.</strong>
+This helps with:<ul>
+<li>readability</li>
+<li>bug-finding</li>
+<li>parallelisation via the <abbr title="defines how different scripts within the project’s analytic code should be run: in what order, with which versions of which software, etc; defined in a file named `project.yaml`">project pipeline</abbr></li>
+</ul>
+</li>
+</ul>
+<h2 id="project-pipelines">Project pipelines<a class="headerlink" href="#project-pipelines" title="Permanent link">&#128279;</a></h2>
+<p>The <a href="../cohortextractor/">cohortextractor</a> section describes how to write commands to generate dummy datasets based on the instructions <a href="../study-def/">defined in your <code>study_definition.py</code> script</a>.
+These dummy datasets are the basis for developing the analysis code that will eventually be passed to the server to run on real datasets.
+The code can be written and run on your local machine using whatever development set up you prefer (e.g., developing R in RStudio).
+However, it's important to ensure that this code will run successfully in OpenSAFELY's secure environment too, using the specific language and package versions that are installed there. To do this, you should use the Project Pipeline.</p>
+<p>The <abbr title="defines how different scripts within the project’s analytic code should be run: in what order, with which versions of which software, etc; defined in a file named `project.yaml`">project pipeline</abbr>, defined entirely in a <code>project.yaml</code> file, is a system for executing your code using a series of <em>actions</em> i.e., a discrete analytical step within the analysis, each of which may depend on previous actions.</p>
+<p>The primary purpose of the pipeline is to specify the execution order for all your code, so that it can be automatically run and tested from start to finish using dummy data and using the live database in the secure environment, using an identical software configuration.
+Arranging your code like this also has several other advantages:</p>
+<ul>
+<li>The pipeline knows if outputs for given actions already exist, and by default skips running them if so. This greatly speeds up the debugging cycle when testing against live data</li>
+<li>In production, actions that can be executed in parallel will be, automatically</li>
+<li>Thinking about your analysis in terms of actions makes it more readable and therefore easier to review and test. For example, being explicit about what the inputs and outputs of each actions are ensures you don't overwrite files by accident.</li>
+<li>The pipeline forces you to declare which outputs may be more or less disclosive.</li>
+</ul>
+<h3 id="projectyaml-format"><code>project.yaml</code> format<a class="headerlink" href="#projectyaml-format" title="Permanent link">&#128279;</a></h3>
+<p>The <abbr title="defines how different scripts within the project’s analytic code should be run: in what order, with which versions of which software, etc; defined in a file named `project.yaml`">project pipeline</abbr> is defined in a single file, <code>project.yaml</code>, which lives in the repository's root directory. 
+It is written using a configuration format called <a href="https://yaml.org/">YAML</a>, which uses indentation to indicate groupings of related variables.</p>
+<p>A simple example of a <code>project.yaml</code> is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.0&quot;</span>
+
+<span class="nt">expectations</span><span class="p">:</span>
+  <span class="nt">population_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+
+<span class="nt">actions</span><span class="p">:</span>
+
+  <span class="nt">generate_study_population</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cohortextractor:latest generate_cohort --study-definition study_definition</span>
+    <span class="nt">outputs</span><span class="p">:</span>
+      <span class="nt">highly_sensitive</span><span class="p">:</span>
+        <span class="nt">cohort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/input.csv</span>
+
+  <span class="nt">run_model</span><span class="p">:</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stata-mp:latest analysis/model.do</span>
+    <span class="nt">needs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">generate_study_population</span><span class="p p-Indicator">]</span>
+    <span class="nt">outputs</span><span class="p">:</span>
+      <span class="nt">moderately_sensitive</span><span class="p">:</span>
+        <span class="nt">model</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">models/cox-model.txt</span>
+        <span class="nt">figure</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">figures/survival-plot.png</span>
+</code></pre></div>
+<p>This example declares the pipeline <code>version</code>, the <code>population_size</code> for the dummy data, and two actions, <code>generate_study_population</code> and <code>run_model</code>.</p>
+<p>You only need to change <code>version</code> if you want to take advantage of features of newer versions of the pipeline framework.</p>
+<p>The <code>generate_study_population</code> action will create the highly sensitive <code>input.csv</code> dataset.
+It will be dummy data when run locally, and will be based on real data from the OpenSAFELY database when run in the secure environment.
+The <code>run_model</code> action will run a Stata script called <code>model.do</code> based on the the <code>input.csv</code> created by the previous action.
+It will output two moderately sensitive files <code>cox-model.txt</code> and <code>survival-plot.png</code>, which can be checked and released if appropriate.</p>
+<p>Every <code>project.yaml</code> requires a <code>version</code>, <code>expectations</code>, and <code>actions</code> section.
+In general, actions are composed as follows:</p>
+<ul>
+<li>Each action must be named using a valid YAML key (you won't go wrong with letters, numbers, and underscores) and must be unique.</li>
+<li>Each action must include a <code>run</code> key which includes an officially-supported command and a version (<code>latest</code> will always select the most recent version, but following initial development you should specify the version to ensure reproducibility).<ul>
+<li>The <code>cohortextractor</code> command has the same options as described in the <a href="../cohortextractor/">cohortextractor section</a>.</li>
+<li>The <code>python</code>, <code>r</code>, and <code>stata-mp</code> commands provide a locked-down execution environment can take one or more <code>inputs</code> which are passed to the code.</li>
+</ul>
+</li>
+<li>Each action must include an <code>outputs</code> key with at least one output, classified as either <code>highly_sensitive</code> or <code>moderately_sensitive</code><ul>
+<li><code>highly_sensitive</code> outputs are considered potentially highly-disclosive, and are never intended for publishing outside the secure environment</li>
+<li><code>moderately_sensitive</code> outputs are automatically copied to the secure review area for redaction (otherwise known as <a href="../security-levels/"><abbr title="tables, figures, and other structured files produced as a result of the analysis of Level 3 data, for example summary statistics and statistical models. OpenSAFELY users with the appropriate permission can view this data, and publish it to the internet if they consider it safe to do so">Level 4</abbr></a>) and potentially for publication back to Github.</li>
+</ul>
+</li>
+<li>Each action can include a <code>needs</code> key which specifies a list of actions (contained within square brackets and separated by commas) that are required for it to successfully run. When an action runs, the <code>outputs</code> of all its <code>needs</code> actions are copied to its working directory. <code>needs</code> actions can be defined anywhere in the <code>project.yaml</code>, but it's more readable if they are defined above.</li>
+</ul>
+<p>When writing and running your pipeline, note that:</p>
+<ul>
+<li>
+<p>All file paths must be declared relative to the repository's root directory. So for example use <code>outputs/figures/</code>, not <code>C:/users/elvis/documents/myrepo/outputs/figures</code>.</p>
+</li>
+<li>
+<p>File paths are case-sensitive as everything is run inside a Linux Docker container.</p>
+</li>
+<li>
+<p>The location of each action's output is determined by the underlying code that the action invoked, not by the value of the <code>outputs</code> configuration. The purpose of <code>outputs</code> is to label the disclosivity of each output and indicate that it should be stored securely &mdash; <strong>any outputs not labelled will not be saved.</strong></p>
+</li>
+<li>
+<p>Each action is run in its own isolated environment in a temporary working directory. This means that all the necessary libraries and data must be imported within the script for each action &mdash; For R users, this essentially means that the R is restarted for each action.</p>
+</li>
+<li>
+<p>If one or more dependencies of an action have not been run (i.e., their outputs do not exist) then these dependency actions will be run first. If a dependency has changed but has not been run (so the outputs are not up-to-date with the changes), then the dependency actions will not be run, and the dependent actions will be run using the out-of-date outputs.</p>
+</li>
+</ul>
+<h2 id="execution-environments">Execution environments<a class="headerlink" href="#execution-environments" title="Permanent link">&#128279;</a></h2>
+<p>OpenSAFELY currently supports Stata, Python, and R for statistical analysis.</p>
+<p>For security reasons, available libraries are restricted to those provided by the framework, though you can <a href="../requests-packages/">request additions</a>.</p>
+<p>The framework executes your scripts using Docker images which have been preloaded with a fixed set of libraries. 
+These Docker images have yet to be optimised; if you have skills in creating Dockerfiles and would like to help, get in touch!</p>
+<h3 id="stata">Stata<a class="headerlink" href="#stata" title="Permanent link">&#128279;</a></h3>
+<p>We currently package version 16.1, with <code>datacheck</code>, <code>safetab</code>, and <code>safecount</code> libraries installed; when installed, new libraries will appear <a href="https://github.com/opensafely/stata-docker/tree/master/libraries">in the stata-docker Github repository</a>.</p>
+<p>As Stata is a commercial product, and the image incorporates our license key, the Docker image and <a href="https://github.com/opensafely/stata-docker/">Github repository</a> are currently private, pending work to separate the license from the image.
+Get in touch if you need to apply your own license and we can accelerate this work.</p>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&#128279;</a></h3>
+<p>The docker image provided is Python 3.8, with <a href="https://github.com/opensafely/python-docker/blob/main/requirements.txt">this list of packages installed</a>.</p>
+<h3 id="r">R<a class="headerlink" href="#r" title="Permanent link">&#128279;</a></h3>
+<p>The R image provided is R 4.0, with <a href="https://github.com/opensafely/r-docker/blob/master/Dockerfile#L30">this list of libraries installed</a>. 
+Currently our configuration doesn't list the precise versions of the libraries. 
+If you need this, get in touch and we will accelerate this work.</p>
+<h2 id="running-your-code-locally">Running your code locally<a class="headerlink" href="#running-your-code-locally" title="Permanent link">&#128279;</a></h2>
+<p>Whilst you can develop and run code locally using your own installations of R, Stata or Python, it's important to check that these will also successfully run on the real data in an identical execution environment.</p>
+<p>The <code>opensafely run</code> command will execute one or more actions according to the <code>project.yaml</code>.
+To see its options, type <code>opensafely run --help</code>.</p>
+<p>For <code>opensafely run</code> to work:</p>
+<ul>
+<li>You need to have both <a href="install-python">Python</a> and <a href="../install-docker/">Docker</a> installed.</li>
+<li>The Docker daemon must be running on your machine:</li>
+<li>For Windows users using Docker Desktop, there should be a Docker icon in your system tray.</li>
+<li>For Mac users using Docker Desktop, there should be a Docker icon in the top status bar.</li>
+<li>You <em>may</em> need credentials for our docker registry (for example, if you are running Stata actions, which require a licensed version). If you have access, you can see <a href="https://github.com/opensafely/server-instructions/blob/master/docs/Server-side%20how-to.md#log-in-to-docker">instructions for this here</a>.</li>
+</ul>
+<p>To run the first action in the example above, using dummy data, you can use:</p>
+<div class="highlight"><pre><span></span><code>opensafely run generate_study_population
+</code></pre></div>
+<p>This will generate the <code>input.csv</code> file as explained in the <a href="../cohortextractor/">cohortextractor</a> section.</p>
+<p>To run the second action you can use:</p>
+<div class="highlight"><pre><span></span><code>opensafely run run_model
+</code></pre></div>
+<p>It will create the two files as specified in the <code>analysis/model.do</code> script.</p>
+<p>To force the dependencies to be run you can use for example <code>opensafely run run_model --force-run-dependencies</code>, or <code>-f</code> for short. 
+This will ensure for example that both the <code>run_model</code> and <code>generate_study_population</code> actions are run, even if <code>input.csv</code> already exists.</p>
+<p>To run all actions, you can use a special <code>run_all</code> action which is created for you (no need to define it in your <code>project.yaml</code>):</p>
+<div class="highlight"><pre><span></span><code>opensafely run run_all
+</code></pre></div>
+<p>Each time an action is run, logging information about your run will be put into the  <code>metadata/</code> folder. 
+If any of your actions fail, you may find clues here as to why.</p>
+<details>
+  <summary>Click here for information on the exact steps that occur when each job is run locally</summary>
+
+What happens:
+
+1. A new, empty temporary directory for the job is created
+2. Any files in the local repo that _do not_ match the output patterns in the `project.yaml` are copied into the temporary folder
+3. Any output files from the job's dependencies are copied into the temporary folder
+4. The job is run
+5. All the files matching the specified output patterns are copied into the local repo
+6. The log files for the job are saved into the `metadata/` directory
+7. The temporary directory is deleted
+
+</details>
+
+<h2 id="running-your-code-with-github-actions">Running your code with GitHub actions<a class="headerlink" href="#running-your-code-with-github-actions" title="Permanent link">&#128279;</a></h2>
+<p>Every time you create a pull request to merge a development branch onto the main remote branch, GitHub will automatically run a series of tests on the code; specifically, that your codelists are up-to-date, and that <code>run_all</code> completes successfully.
+Depending on your settings, you may receive email notifications about the results of these tests.
+You can view the tests, including any errors or failures, by going to the pull request page on GitHub and clicking the <code>checks</code> tab.</p>
+<p>You can re-run these tests by clicking the <code>re-run jobs</code> button.</p>
+<h2 id="running-your-code-on-the-server">Running your code on the server<a class="headerlink" href="#running-your-code-on-the-server" title="Permanent link">&#128279;</a></h2>
+<p>To run code for real in the production environment, use the <a href="https://jobs.opensafely.org">https://jobs.opensafely.org</a> site.
+Here you can see (even without a login) all the ongoing projects within OpenSAFELY, and the specific <em>jobs</em> that have been run on the server.
+To submit jobs (i.e., to run actions), the general process is as follows:</p>
+<ul>
+<li><strong>Log in</strong> using your GitHub credentials (this should happen automatically if you have access to the OpenSAFELY GitHub organisation).</li>
+<li><strong>Create a workspace</strong> (or select an existing workspace):<ul>
+<li>click the <code>Add a New WorkSpace</code> button</li>
+<li>choose a name, for example the name of the repo</li>
+<li>select a database to run against (either dummy data, real data, or a small sample of the real data)</li>
+<li>select the repo and branch that you want to run actions with</li>
+<li>click <code>Submit</code>.</li>
+</ul>
+</li>
+<li><strong>Select actions</strong> to run:<ul>
+<li>select the actions you want to run by clicking the <code>Run</code> buttons</li>
+<li>if any of these actions have dependencies then they will also be run, unless their outputs already exist</li>
+<li>dependencies can be viewed by clicking the <code>Needs</code> button</li>
+<li>you can force dependencies to be run by clicking <code>Force run dependencies</code>, even if those actions have already been run</li>
+<li>when you're ready, click <code>Submit</code>.</li>
+</ul>
+</li>
+</ul>
+<p>The workspace is available at <code>https://jobs.opensafely.org/&lt;WORKSPACE_NAME&gt;/</code>.
+You can view the progress of these actions by click the <code>Logs</code> button from the workspace, or going to <code>https://jobs.opensafely.org/&lt;WORKSPACE_NAME&gt;/logs</code>.</p>
+<details>
+<summary>Click here for information on the exact steps that occur when each job is run on the server</summary>
+
+What happens:
+
+1. A new, empty temporary directory for the job is created
+2. Copy in all files on the selected branch
+3. The job is run
+4. All the files matching the specified output patterns are copied into the local repo
+5. The log files for the job are saved into the `metadata/` directory
+6. The temporary directory is deleted
+</details>
+
+<p>The job will either succeed or fail. 
+In either case, the output and log files are only visible in the secure environment to avoid disclosure of potentially sensitive information.</p>
+<h3 id="accessing-the-outputs">Accessing the outputs<a class="headerlink" href="#accessing-the-outputs" title="Permanent link">&#128279;</a></h3>
+<p>Only users with access to <abbr title="tables, figures, and other structured files produced as a result of the analysis of Level 3 data, for example summary statistics and statistical models. OpenSAFELY users with the appropriate permission can view this data, and publish it to the internet if they consider it safe to do so">Level 4</abbr> can view output files that are labelled as moderately sensitive and the automatically created log files of the run.</p>
+<p>For security reasons, they will be in a different directory than if you had run locally. For the <abbr title="The Phoenix Partnership, the company behind the SystmOne EHR">TPP</abbr> backend, outputs labelled <code>moderately_sensitive</code> in the <code>project.yaml</code> will be saved in <code>D:/Level4Files/workspaces/&lt;NAME_OF_YOUR_WORKSPACE&gt;</code>. These outputs can be <a href="../releasing-files/">reviewed on the server</a> and released via GitHub if they are deemed non-disclosive.</p>
+<p>Outputs labelled <code>highly_sensitive</code> are not visible.</p>
+<h4 id="if-you-have-level-3-access">If you have <abbr title="intermediate data, required for running a study, which may contain identifiable information, and which should never be considered for publication; usually a CSV produced from a study definition. Most OpenSAFELY users will not have (or need) permission to see this data directly">Level 3</abbr> access<a class="headerlink" href="#if-you-have-level-3-access" title="Permanent link">&#128279;</a></h4>
+<p>No data should ever be published from the <abbr title="intermediate data, required for running a study, which may contain identifiable information, and which should never be considered for publication; usually a CSV produced from a study definition. Most OpenSAFELY users will not have (or need) permission to see this data directly">Level 3</abbr> server. Access is only for permitted users, for the purpose of debugging problems in the secure environment.</p>
+<p>Highly sensitive outputs can be seen in <code>E:/high_privacy/workspaces/&lt;WORKSPACE_NAME&gt;</code>. This includes a directory called <code>metadata</code>, containing log files for each action e.g. <code>generate_chorts.log</code>, <code>run_model.log</code>.</p>
+<p>Moderately sensitive outputs can be seen in <code>E:/FILESFORL4/workspaces/&lt;WORKSPACE_NAME&gt;</code>.</p>
+<h2 id="running-your-code-manually-in-the-server">Running your code manually in the server<a class="headerlink" href="#running-your-code-manually-in-the-server" title="Permanent link">&#128279;</a></h2>
+<p>This is only possible for people with <abbr title="intermediate data, required for running a study, which may contain identifiable information, and which should never be considered for publication; usually a CSV produced from a study definition. Most OpenSAFELY users will not have (or need) permission to see this data directly">Level 3</abbr> access. You'll want to refer to <a href="https://github.com/opensafely/server-instructions/blob/master/docs/Server-side%20how-to.md">instructions for interacting with OpenSAFELY via the secure server</a> (in restricted access repo).</p>
+<p>The live environment is set up via a wrapper script; instead of <code>cohortextractor</code>, you should run <code>/e/bin/actionrunner.sh</code>.
+For example, to run <code>run_model</code> on the <abbr title="intermediate data, required for running a study, which may contain identifiable information, and which should never be considered for publication; usually a CSV produced from a study definition. Most OpenSAFELY users will not have (or need) permission to see this data directly">Level 3</abbr> server, against the <code>full</code> database, you'd type:</p>
+<div class="highlight"><pre><span></span><code>/e/bin/actionrunner.sh run full run_model tpp
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../codelist-snomed/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                SNOMED codelists
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../releasing-files/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Releasing files from the server
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
